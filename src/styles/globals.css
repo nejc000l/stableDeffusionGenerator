@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    
+}
+.prompt {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .button {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: white;
+    background-color: #2133cf;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 18px;
+    
+  }
+  
+  .button:hover {
+    background-color: #2d6bb1;
+  }
