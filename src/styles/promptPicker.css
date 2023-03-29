@@ -12,11 +12,12 @@ button{
     background-color: #89CFF0;
     color: white;
     border: none;
-    padding: 12px 20px;
+    padding: 12px 12px;
     border-radius: 4px;
     cursor: pointer;
     transition-duration: 0.4s;
-
+    width: auto;
+    height:auto;
     font-size: 16px;
 }
 
@@ -24,7 +25,12 @@ button:hover {
     background-color: #5DADE2;
     color: white;
 
+
 }
-.selected-txt{
+
+.selected-txt,p{
     text-align: center;
+    padding: 4px;
+    font-size: small;
+    color: white;
 }

@@ -1,60 +1,116 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
-main{
-  background-color:black;
-  font:red;
+main {
+  font: red;
   height: 100pc;
 }
-.container{
-display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: black;
-    color: white;
-  }
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  background-image: url("https://img.freepik.com/free-photo/ai-technology-microchip-background-digital-transformation-concept_53876-124669.jpg?w=1380&t=st=1680132003~exp=1680132603~hmac=e4afe7d968adc78d7fcd95187107eee67d8a54d7a7312f276fbeec50b4822ce4"),
+    linear-gradient(to bottom right, #331956, #531e4d);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+.container_main {
+  display: flex;
+  justify-items: center;
+}
+.generator {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
 
+  width: 100%;
+}
 .prompt {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    color: #333;
-    background-color: #f2f2f2;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  .button {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    color: white;
-    background-color: #2133cf;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: 18px;
-    
-  }
-  
-  .button:hover {
-    background-color: #2d6bb1;
-  }
-  .title{
-    font-size: 2rem;
-    padding-bottom: 2rem;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 5px;
+}
+.button {
+  font-family: Arial, sans-serif;
+  color: white;
+  background-color: #2133cf;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 18px;
+}
 
-  }
-  .title span{
-      color:#2133cf;
-  }
-  input{
-    outline: none;
-all:unset    
-  }
-  input:focus {
-    outline: none;
-    border: none;
-    background-color: #ddd;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+.button:hover {
+  background-color: #2d6bb1;
+}
+.title {
+  font-size: 2rem;
+  padding-bottom: 2rem;
+}
+.title span {
+  color: #2133cf;
+}
+.title {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 2rem;
+}
+input {
+  outline: none;
+  all: unset;
+}
+input:focus {
+  outline: none;
+  border: none;
+  background-color: #ddd;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.result-image img {
+  border-radius: 10%;
+  width: 50pc;
+  margin: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.589);
+}
+p {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #6c757d;
+}
+
+p span {
+  font-size: 0.6rem;
+  font-weight: normal;
+  color: white;
+}
+.description {
+  font-size: 12px;
+  color: white;
+}
+.description h3 {
+  color: blue;
+  font-size: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.description-md {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 2rem;
+  text-shadow: #333;
 }

@@ -3,4 +3,9 @@
     height: auto;
     background-color: black;
     position: sticky;
+    display: flex;
+}
+.logo{
+    width: auto;
+    margin: 20px;
 }

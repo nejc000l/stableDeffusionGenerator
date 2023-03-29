@@ -14,7 +14,7 @@ const PromptPicker = ({ prompts,handlePromptClick}) => {
   return (
     <div className='btn-prompts'>
 
-<div>
+<div className='btn'>  
 
       {prompts.map((prompt, index) => (
         <button
