@@ -13,7 +13,7 @@ function App() {
     "A cat with red fur",
     "A dog",
     'A tree whit a cat',
-    
+    'Red tree red dawn cat',
     "A bird with a scarf",
     "A lion",
   ]
