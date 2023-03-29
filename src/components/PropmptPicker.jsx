@@ -1,17 +1,21 @@
 import React, { useState, useRef } from 'react';
-
-const PromptPicker = ({ prompts }) => {
-  const [selectedPrompt, setSelectedPrompt] = useState(null);
-  const promptRefs = useRef(prompts.map(() => React.createRef()));
-
+import '../styles/promptPicker.css'
+const PromptPicker = ({ prompts,handlePromptClick}) => {
+  const promptRefs = useRef(prompts.map(() => React.createRef()))
+    const [selectedPrompt,setSelectedPrompt]= useState(null)
   const handleClick = index => {
+    handlePromptClick(prompts[index]);
     setSelectedPrompt(prompts[index]);
     promptRefs.current.forEach(ref => (ref.current.style.backgroundColor = ''));
-    promptRefs.current[index].current.style.backgroundColor = 'lightblue';
+    promptRefs.current[index].current.style.backgroundColor = 'lightblue'
   };
 
+
   return (
-    <div>
+    <div className='btn-prompts'>
+
+<div>
+
       {prompts.map((prompt, index) => (
         <button
           key={prompt}
@@ -21,9 +25,15 @@ const PromptPicker = ({ prompts }) => {
           {prompt}
         </button>
       ))}
+
+<div className='selecte-txt'>
       {selectedPrompt && <p>You selected: {selectedPrompt}</p>}
+
+</div>
+      </div>
+
     </div>
-  );
-};
+  )
+}
 
 export default PromptPicker;

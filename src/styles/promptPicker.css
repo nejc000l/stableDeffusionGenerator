@@ -1,0 +1,30 @@
+.btn-prompts{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border:none;
+}
+
+button{
+    margin: 10px;
+    padding: .5rem;
+    background-color: #89CFF0;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #5DADE2;
+    color: white;
+
+}
+.selected-txt{
+    text-align: center;
+}

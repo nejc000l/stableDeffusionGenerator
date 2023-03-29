@@ -1,11 +1,21 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+main{
+  background-color:black;
+  font:red;
+  height: 100pc;
+}
 .container{
-    display: flex;
+display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     flex-direction: column;
-    
-}
+    background-color: black;
+    color: white;
+  }
+
 .prompt {
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -30,3 +40,21 @@
   .button:hover {
     background-color: #2d6bb1;
   }
+  .title{
+    font-size: 2rem;
+    padding-bottom: 2rem;
+
+  }
+  .title span{
+      color:#2133cf;
+  }
+  input{
+    outline: none;
+all:unset    
+  }
+  input:focus {
+    outline: none;
+    border: none;
+    background-color: #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}

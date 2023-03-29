@@ -1,16 +1,24 @@
-import React, { useState } from 'react';
-import '../src/styles/globals.css'
-import PromptPicker from './components/PropmptPicker';
+import React, { useState } from "react";
+import "../src/styles/globals.css";
+import Navbar from "./components/Navbar";
+import PromptPicker from "./components/PropmptPicker";
 
-const API_TOKEN = "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"
+const API_TOKEN = import.meta.env.VITE_API_TOKEN;
 
 function App() {
   const [loading, setLoading] = useState(false);
   const [output, setOutput] = useState(null);
-  const [selectedPrompt, setSelectedPrompt] = useState(null);
-  const prompts = ['a cat with red fur', 'a dog with a hat', 'a bird with a scarf'];
- const handlePromptClick = prompt => {
-  setSelectedPrompt(prompt);
+  const [selectedPrompt, setSelectedPrompt] = useState("");
+  const prompts = [
+    "A cat with red fur",
+    "A dog",
+    'A tree whit a cat',
+    
+    "A bird with a scarf",
+    "A lion",
+  ]
+  const handlePromptClick = (prompt) => {
+    setSelectedPrompt(prompt);
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -28,6 +36,7 @@ function App() {
         body: JSON.stringify({ inputs: input }),
       }
     );
+    console.log(response);
 
     if (!response.ok) {
       throw new Error("Failed to generate image");
@@ -37,28 +46,45 @@ function App() {
     setOutput(URL.createObjectURL(blob));
     setLoading(false);
   };
-  console.log(output)
+  console.log(selectedPrompt);
 
-  return (<div className="container al-c mt-3">
-    <h1>Stable <span>Diffusion</span></h1>
-    <p>This is an Image Generator api using Stable Defussion </p>
-    <span>Give it a simple prompt like for example:</span>
-    <PromptPicker  onPromptClick={handlePromptClick} prompts={prompts} />;
+  return (
+    <main>
+    <div className="container al-c mt-3">
+      <Navbar />
+      <div className="title">
+      <h1>
+        Unstable <span>Diffusion</span>
+      </h1>
 
-    <form className="gen-form" onSubmit={handleSubmit}>
-      <input value={selectedPrompt} onChange={e => selectedPrompt(e.target.value)} className=' prompt' type="text" name="input" placeholder="type your prompt here..." />
-      <button className='button' type="submit">Generate</button>
-    </form>
-    <div>
-    {loading && <div className="loading">Loading...</div>}
-    {!loading && output && (
-      <div className="result-image">
-        <img src={output} alt="art"  />
       </div>
-    )}
+      <p>This is an Image Generator api using early Stable Defussion 1.5 </p>
+      <span>Give it a simple prompt this are just some of the example:</span>
+      <PromptPicker handlePromptClick={handlePromptClick} prompts={prompts} />
+      <form className="gen-form" onSubmit={handleSubmit}>
+        <input
+          value={selectedPrompt.toLocaleLowerCase()}
+          onChange={(e) => setSelectedPrompt(e.target.value)}
+          className=" prompt"
+          type="text"
+          name="input"
+          placeholder="type your prompt here..."
+        />
+        <button className="button" type="submit">
+          Generate
+        </button>
+      </form>
+      <div>
+        {loading && <div className="loading">Loading...</div>}
+        {!loading && output && (
+          <div className="result-image">
+            <img src={output} alt="art" />
+          </div>
+        )}
+      </div>
     </div>
-
-    </div>);
+    </main>
+  );
 }
 
 export default App;
