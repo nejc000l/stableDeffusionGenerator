@@ -1,11 +1,13 @@
 .navbar{
     width:  100%;
-    height: auto;
+    height: 80px;
     background-color: black;
     position: sticky;
+    align-items: center;
     display: flex;
 }
 .logo{
     width: auto;
+    height: 40px;
     margin: 20px;
 }
