@@ -4,10 +4,11 @@
     justify-content: center;
     align-items: center;
     border:none;
-    padding: 0 20px;
+    
 }
 
 button{
+    
     margin: 10px;
     padding: .5rem;
     color: white;
@@ -17,16 +18,34 @@ button{
     border-radius: 4px;
     cursor: pointer;
     transition-duration: 0.4s;
-    width: auto;
-    height:auto;
-    font-size: 16px;
+    width: 200px;
+    height:40px;
+    
 }
 
 button:hover {
     background-color: #0c0d6b;
     color: white;
+}
 
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .btn-prompts { font-size: 1.2rem; }
+}
 
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .btn-prompts { font-size: 1.4rem; }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .btn-prompts { font-size: 1.6rem; }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .btn-prompts { font-size: 1.8rem; }
 }
 
 .selected-txt,p{

@@ -8,16 +8,21 @@ main {
 }
 .header {
   display: flex;
+  height: auto;
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  height: 1000px;
-  background-image: url("https://img.freepik.com/free-photo/ai-technology-microchip-background-digital-transformation-concept_53876-124669.jpg?w=1380&t=st=1680132003~exp=1680132603~hmac=e4afe7d968adc78d7fcd95187107eee67d8a54d7a7312f276fbeec50b4822ce4"),
+  background-image: url("https://img.freepik.com/free-vector/sphere-grid-wave-with-binary-code-ai-artificial-intelligence-logo-hand-machine-learning-concept_127544-855.jpg?w=1380&t=st=1680176036~exp=1680176636~hmac=9d04b0f70d836ec653a0996908f99b181ffec65c9caf96043cabc681c5919f55"),
 
     linear-gradient(to bottom right, #331956, #531e4d);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.result-image, img{
+    width: 512px;
+    padding-left: 40px;
+    height: auto;
 }
 .container {
   display: flex;
@@ -82,14 +87,6 @@ input:focus {
   background-color: #ddd;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
-img{
-  
-  width: 600px;
-  height: 500px;
-  position: relative;
-  left: 30px;
-  object-fit: contain;
-}
 
 p {
   font-size: 0.8rem;
@@ -103,24 +100,34 @@ p span {
   color: white;
 }
 .description {
-  font-size: 12px;
-  color: white;
-}
-.description h3 {
-  color: blue;
-  font-size: 4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.description-md {
-  font-size: 2rem;
-  font-weight: 400;
-  margin: 0;
-  text-shadow: #333;
-}
-
+    font-size: 12px;
+    color: white;
+    flex-wrap: wrap;
+  }
+  
+  .description h3 {
+    color: blue;
+    font-size: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .description-md {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0;
+    text-shadow: #333;
+  }
+  
+  .description-sm {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-shadow: #1b1717;
+    padding-top:2rem;
+  }
 .tag {
+    font-size: 2rem;
     color: #34d4d4;
     font-weight: 900;
     text-decoration-line: underline;
@@ -128,60 +135,74 @@ p span {
     cursor: pointer;
   
 }
+@media screen and (max-width: 768px) {
+    .description-md {
+        font-size: 1.5rem;
+    }
+    .description-sm {
+        font-size: 1.2rem;
+    }
+}
+/* Small devices (landscape phones, 576px and up) */
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .header{
+        height: auto;
+
+    }
+    main{
+        overflow: hidden;
+    }
+    .container_main {
+      flex-direction: column;
+      align-items: center;
+
+    }
+    section{
+        flex-direction: column;
+        align-items: center;
   
-  .description-sm {
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin: 2rem;
-    text-shadow: #1b1717;
-  }
+    }
 
-  /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  .description-md {
-    font-size: 14px;
+    .generator {
+      width: 90%;
+    }
+    .description-md {
+      font-size: 1rem;
+    }
+    .title{
+        text-align: center;
+    }
   }
-  .description-sm {
-    font-size: 12px;
+  
+  /* Small devices (landscape phones, 576px and up) */
+  @media (min-width: 576px) {
+    .description-md {
+      font-size: 1.2rem;
+    }
   }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  .description-md {
-    font-size: 16px;
+  
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    main{
+        overflow: hidden;
+    }
+ 
+    .description-md {
+      font-size: 1rem;
+    }
   }
-  .description-sm {
-    font-size: 14px;
+  
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    .description-md {
+      font-size: 1.2rem;
+    }
   }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  .description-md {
-    font-size: 18px;
+  
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    .description-md {
+      font-size: 1.8rem;
+    }
   }
-  .description-sm {
-    font-size: 16px;
-  }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  .description-md {
-    font-size: 20px;
-  }
-  .description-sm {
-    font-size: 18px;
-  }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  .description-md {
-    font-size: 22px;
-  }
-  .description-sm {
-    font-size: 20px;
-  }
-}

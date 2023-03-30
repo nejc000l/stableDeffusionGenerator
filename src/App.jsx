@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../src/styles/globals.css";
 import GaleryContainer from "./components/GaleryContainer";
 import Navbar from "./components/Navbar";
@@ -8,9 +8,7 @@ const API_TOKEN = import.meta.env.VITE_API_TOKEN;
 
 function App() {
   const [loading, setLoading] = useState(false);
-  const [output, setOutput] = useState(
-    "https://images.squarespace-cdn.com/content/v1/6213c340453c3f502425776e/0715034d-4044-4c55-9131-e4bfd6dd20ca/2_4x.png"
-  );
+  const [output, setOutput] = useState("");
   const [selectedPrompt, setSelectedPrompt] = useState("");
   const prompts = [
     "A cat with red fur",
@@ -23,35 +21,40 @@ function App() {
   const handlePromptClick = (prompt) => {
     setSelectedPrompt(prompt);
   };
-  const handleSubmit = async (event) => {
+
+const handleSubmit = async (event, input) => {
+  if (event) {
     event.preventDefault();
-    setLoading(true);
+    input = event.target.elements.input.value;
+  }
 
-    const input = event.target.elements.input.value;
-    const response = await fetch(
-      "https://api-inference.huggingface.co/models/prompthero/openjourney",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${API_TOKEN}`,
-        },
-        body: JSON.stringify({ inputs: input }),
-      }
-    );
-    console.log(response);
+  setLoading(true);
 
-    if (!response.ok) {
-      throw new Error("Failed to generate image");
+  const response = await fetch(
+    "https://api-inference.huggingface.co/models/prompthero/openjourney",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${API_TOKEN}`,
+      },
+      body: JSON.stringify({ inputs: input }),
     }
+  );
 
-    const blob = await response.blob();
-    setOutput(URL.createObjectURL(blob));
-    setLoading(false);
-  };
-  console.log(selectedPrompt);
+  if (!response.ok) {
+    throw new Error("Failed to generate image");
+  }
 
-  return (
+  const blob = await response.blob();
+  setOutput(URL.createObjectURL(blob));
+  setLoading(false);
+};
+useEffect(() => {
+  handleSubmit(null, 'default input');
+}, []);
+
+return (
     <main>
       <div className="container al-c mt-3">
         <Navbar />
@@ -71,9 +74,9 @@ function App() {
             <div>
               {!loading && output && (
                 <div className="result-image">
-                  <img src={output} alt="art" />
+                  <img  src={output} alt="" />
                 </div>
-              )}{" "}
+              )}
             </div>
             {/* right side */}
             <div className="generator">
@@ -81,7 +84,7 @@ function App() {
                 <h4 className="description-md">
                   An open-source machine learning model that can generate images
                   from text, modify images based on text, or fill in details on
-                  low-resolution or low-detail images 1. It has been trained on
+                  low-resolution or low-detail images. It has been trained on
                   billions of images and can produce results that are comparable
                   to the ones you’d get from DALL-E 2 and MidJourney.
                 </h4>
@@ -115,7 +118,7 @@ function App() {
           </section>
 
           <section>
-         <GaleryContainer/>
+            <GaleryContainer />
           </section>
         </div>
       </div>
