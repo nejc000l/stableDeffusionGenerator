@@ -35,6 +35,7 @@ main {
   justify-items: center;
   flex-direction: column;
   width: 100%;
+  padding: 0 85px;
 }
 .prompt {
   font-family: Arial, sans-serif;
@@ -114,3 +115,19 @@ p span {
   margin: 2rem;
   text-shadow: #333;
 }
+
+.tag {
+    color: #34d4d4;
+    font-weight: 900;
+    text-decoration-line: underline;
+    text-decoration-thickness: 5%;
+    cursor: pointer;
+  
+}
+  
+  .description-sm {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 2rem;
+    text-shadow: #1b1717;
+  }
