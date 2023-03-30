@@ -11,6 +11,7 @@ main {
   flex-direction: column;
   justify-items: center;
   align-items: center;
+  height: 1000px;
   background-image: url("https://img.freepik.com/free-photo/ai-technology-microchip-background-digital-transformation-concept_53876-124669.jpg?w=1380&t=st=1680132003~exp=1680132603~hmac=e4afe7d968adc78d7fcd95187107eee67d8a54d7a7312f276fbeec50b4822ce4"),
 
     linear-gradient(to bottom right, #331956, #531e4d);
@@ -81,12 +82,15 @@ input:focus {
   background-color: #ddd;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
-.result-image img {
-  border-radius: 10%;
-  width: 50pc;
-  margin: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.589);
+img{
+  
+  width: 600px;
+  height: 500px;
+  position: relative;
+  left: 30px;
+  object-fit: contain;
 }
+
 p {
   font-size: 0.8rem;
   font-weight: bold;
@@ -112,7 +116,7 @@ p span {
 .description-md {
   font-size: 2rem;
   font-weight: 400;
-  margin: 2rem;
+  margin: 0;
   text-shadow: #333;
 }
 
