@@ -48,7 +48,8 @@ const reloadButton = () => {
         </button>
         
       ))}
-<AiOutlineReload   style={{ cursor: 'pointer' }}onClick={reloadButton}/> 
+<AiOutlineReload    size={20}         className="reload-icon"
+onClick={reloadButton}/> 
 <div className='selecte-txt'>
       {selectedPrompt && <p>You selected: {selectedPrompt}</p>}
 

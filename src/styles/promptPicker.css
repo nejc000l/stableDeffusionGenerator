@@ -34,3 +34,24 @@ button:hover {
     font-size: small;
     color: white;
 }
+
+/* App.css */
+.reload-icon {
+    cursor: pointer;
+}
+
+.reload-icon:active,
+.reload-icon:hover {
+    animation: spin 1s linear;
+    animation-iteration-count: 3;
+}
+
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
