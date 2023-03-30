@@ -12,6 +12,7 @@ main {
   justify-items: center;
   align-items: center;
   background-image: url("https://img.freepik.com/free-photo/ai-technology-microchip-background-digital-transformation-concept_53876-124669.jpg?w=1380&t=st=1680132003~exp=1680132603~hmac=e4afe7d968adc78d7fcd95187107eee67d8a54d7a7312f276fbeec50b4822ce4"),
+
     linear-gradient(to bottom right, #331956, #531e4d);
   background-position: center;
   background-repeat: no-repeat;
@@ -33,7 +34,6 @@ main {
   align-items: center;
   justify-items: center;
   flex-direction: column;
-
   width: 100%;
 }
 .prompt {

@@ -9,8 +9,8 @@
 button{
     margin: 10px;
     padding: .5rem;
-    background-color: #89CFF0;
     color: white;
+    color: rgba(15, 14, 14, 0.479);
     border: none;
     padding: 12px 12px;
     border-radius: 4px;
@@ -22,7 +22,7 @@ button{
 }
 
 button:hover {
-    background-color: #5DADE2;
+    background-color: #0c0d6b;
     color: white;
 
 

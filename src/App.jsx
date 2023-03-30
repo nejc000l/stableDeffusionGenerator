@@ -74,15 +74,13 @@ function App() {
             )}        </div>
         {/* right side */}
         <div className="generator">
-          <h2 className="description">
-          <h3>
-          Unstable Diffusion
-          </h3>
+          <div className="description">
+       
           <h4 className="description-md">
           An open-source machine learning model that can generate images from text, modify images based on text, or fill in details on low-resolution or low-detail images 1. It has been trained on billions of images and can produce results that are comparable to the ones you’d get from DALL-E 2 and MidJourney 1. Unstable Diffusion is also used to generate NSFW AI-generated content.
 
           </h4>
-          </h2>
+          </div>
           <span>
             Give it a simple prompt this are just some of the example:
           </span>
