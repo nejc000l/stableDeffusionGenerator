@@ -89,7 +89,7 @@ return (
                   to the ones you’d get from DALL-E 2 and MidJourney.
                 </h4>
                 <h5 className="description-sm">
-                  <span className="tag">Unstable Diffusion </span>is also used
+                  <span className="tag">Unstable Diffusion</span>is also used
                   to generate NSFW AI-generated content.
                 </h5>
               </div>
