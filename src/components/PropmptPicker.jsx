@@ -4,13 +4,16 @@ import { AiOutlineReload } from "react-icons/ai";
 const PromptPicker = ({ prompts, handlePromptClick }) => {
   const promptRefs = useRef(prompts.map(() => React.createRef()));
   const [selectedPrompt, setSelectedPrompt] = useState(null);
-  // Make a copy of the prompts array
+  const [promptsToDisplay, setPromptsToDisplay] = useState(prompts);
 
   // Make a copy of the prompts array
   let promptsCopy = [...prompts];
 
   const handleClick = (index) => {
-    handlePromptClick(promptsCopy[index]);
+    let prompt = promptsToDisplay[index];
+    handlePromptClick(prompt);
+    setSelectedPrompt(prompt);
+
     setSelectedPrompt(promptsCopy[index]);
 
     promptRefs.current.forEach(
@@ -33,27 +36,66 @@ const PromptPicker = ({ prompts, handlePromptClick }) => {
   const reloadButton = () => {
     location.reload();
   };
+  const links = document.querySelectorAll(".nav-link a");
+
+  links.forEach((link) => {
+    link.addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent default link behavior
+      links.forEach((link) => {
+        link.classList.remove("active"); // Remove active class from all links
+      });
+      this.classList.add("active"); // Add active class to clicked link
+    });
+  });
+
+  // define a function to filter prompts by keyword
+  const filterPrompts = (keyword) => {
+    return prompts.filter((prompt) =>
+      prompt.toLowerCase().includes(keyword.toLowerCase())
+    );
+  };
+
+  // define a function to handle clicks on the cat and dog tag links
+  const handleTagClick = (keyword) => {
+    let filteredPrompts = filterPrompts(keyword);
+    setPromptsToDisplay(filteredPrompts);
+    setSelectedPrompt(null);
+  };
 
   return (
     <div className="btn-prompts">
-      <div className="btn">
-        {prompts.map((prompt, index) => (
-          <button
-            key={prompt}
-            onClick={() => handleClick(index)}
-            ref={promptRefs.current[index]}
-          >
-            {prompt}
-          </button>
-        ))}
+      <div className="btn-navbar">
+        <div className="nav-link">
+          <a onClick={() => handleTagClick("cat")} href="#">
+            Cats
+          </a>
+          <a onClick={() => handleTagClick("dog")} href="#">
+            Dogs
+          </a>
+        </div>
+        <div className="btn">
+          {promptsToDisplay.map((prompt, index) => (
+            <button
+              ref={promptRefs.current[index]}
+              key={prompt}
+              onClick={() => handleClick(index)}
+            >
+              {prompt}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="selecte-txt">
+        {selectedPrompt && <p>You selected: {selectedPrompt}</p>}
+      </div>
+
+      <div className="reload">
         <AiOutlineReload
           size={20}
           className="reload-icon"
           onClick={reloadButton}
         />
-        <div className="selecte-txt">
-          {selectedPrompt && <p>You selected: {selectedPrompt}</p>}
-        </div>
       </div>
     </div>
   );

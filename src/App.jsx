@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../src/styles/globals.css";
-import GaleryContainer from "./components/GaleryContainer";
+import GalleryContainer from "./components/GalleryContainer";
 import Navbar from "./components/Navbar";
 import PromptPicker from "./components/PropmptPicker";
 
@@ -11,6 +11,11 @@ function App() {
   const [output, setOutput] = useState("");
   const [selectedPrompt, setSelectedPrompt] = useState("");
   const prompts = [
+    "Fluffy cat in sun", 
+    "Dog chasing ball", 
+    "Cat napping on couch", 
+    "Curious dog explores outside", 
+    "Cat purring while petted",
     "A cat with red fur",
     "A dog",
     "A tree whit a cat",
@@ -22,41 +27,41 @@ function App() {
     setSelectedPrompt(prompt);
   };
 
-const handleSubmit = async (event, input) => {
-  if (event) {
-    event.preventDefault();
-    input = event.target.elements.input.value;
-  }
-
-  setLoading(true);
-
-  const response = await fetch(
-    "https://api-inference.huggingface.co/models/prompthero/openjourney",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${API_TOKEN}`,
-      },
-      body: JSON.stringify({ inputs: input }),
+  const handleSubmit = async (event, input) => {
+    if (event) {
+      event.preventDefault();
+      input = event.target.elements.input.value;
     }
-  );
 
-  if (!response.ok) {
-    throw new Error("Failed to generate image");
-  }
+    setLoading(true);
 
-  const blob = await response.blob();
-  setOutput(URL.createObjectURL(blob));
-  setLoading(false);
-};
-useEffect(() => {
-  handleSubmit(null, 'default input');
-}, []);
+    const response = await fetch(
+      "https://api-inference.huggingface.co/models/prompthero/openjourney",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${API_TOKEN}`,
+        },
+        body: JSON.stringify({ inputs: input }),
+      }
+    );
 
-return (
+    if (!response.ok) {
+      throw new Error("Failed to generate image");
+    }
+
+    const blob = await response.blob();
+    setOutput(URL.createObjectURL(blob));
+    setLoading(false);
+  };
+  useEffect(() => {
+    handleSubmit(null, "");
+  }, []);
+
+  return (
     <main>
-      <div className="container al-c mt-3">
+      <div className="container">
         <Navbar />
         <div className="header">
           <div className="title">
@@ -71,10 +76,10 @@ return (
 
           <section className="container_main">
             {/* left side */}
-            <div>
+            <div className="image_container">
               {!loading && output && (
                 <div className="result-image">
-                  <img  src={output} alt="" />
+                  <img src={output} alt="" />
                 </div>
               )}
             </div>
@@ -89,8 +94,8 @@ return (
                   to the ones you’d get from DALL-E 2 and MidJourney.
                 </h4>
                 <h5 className="description-sm">
-                  <span className="tag">Unstable Diffusion</span>is also used
-                  to generate NSFW AI-generated content.
+                  <span className="tag">Unstable Diffusion</span>is also used to
+                  generate NSFW AI-generated content.
                 </h5>
               </div>
               <span>
@@ -116,11 +121,10 @@ return (
               <div>{loading && <div className="loading">Loading...</div>}</div>
             </div>
           </section>
-
-          <section>
-            <GaleryContainer />
-          </section>
         </div>
+      </div>
+      <div className="gallery">
+        <GalleryContainer />
       </div>
     </main>
   );

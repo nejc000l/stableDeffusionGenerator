@@ -1,0 +1,72 @@
+Yes, you can add a loading animation when switching between the cat and dog tag links by using CSS animations and updating the state of your component to control the visibility of the animation.
+
+Here is an example of how you could do this:
+
+First, you can define a new state variable to hold the loading state of your component:
+
+```javascript
+const [isLoading, setIsLoading] = useState(false);
+```
+
+Then, you can update the `handleTagClick` function to set the `isLoading` state to `true` before filtering the prompts and then use a `setTimeout` function to simulate a delay before setting the `isLoading` state back to `false` and updating the state of the `promptsToDisplay` variable:
+
+```javascript
+const handleTagClick = (keyword) => {
+  setIsLoading(true);
+  setTimeout(() => {
+    let filteredPrompts = filterPrompts(keyword);
+    setPromptsToDisplay(filteredPrompts);
+    setSelectedPrompt(null);
+    setIsLoading(false);
+  }, 1000);
+};
+```
+
+Next, you can add a new element to your component to display the loading animation and use conditional rendering to only show it when the `isLoading` state is `true`:
+
+```javascript
+{isLoading && (
+  <div className="loading">
+    Loading...
+  </div>
+)}
+```
+
+Finally, you can use CSS to style the loading element and add an animation to it. Here is an example of how you could do this:
+
+```css
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border: 4px solid #333;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: loading 1s linear infinite;
+}
+```
+
+This CSS code defines styles for the `.loading` class and adds an animation to it using the `@keyframes` rule. The animation rotates the element around its center point to create a spinning effect.
+
+You can adapt this code to fit your specific needs by changing the duration and easing of the animation, as well as the styles of the loading element.

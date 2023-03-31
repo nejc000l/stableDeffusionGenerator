@@ -1,12 +1,36 @@
 .btn-prompts{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     border:none;
+    text-align: center;
     
 }
+.btn{
+    text-align: center;
+}
+.btn-navbar{
+    width: 100%;
+    
+}
+.nav-link a {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: #c7bebe70;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-link a.active {
+    color: #fff;
+    text-decoration: underline;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for color */
 
+
+  }
 button{
     
     margin: 10px;
