@@ -3,7 +3,6 @@ import "../src/styles/globals.css";
 import GalleryContainer from "./components/GalleryContainer";
 import Navbar from "./components/Navbar";
 import PromptPicker from "./components/PropmptPicker";
-
 const API_TOKEN = import.meta.env.VITE_API_TOKEN;
 
 function App() {
@@ -11,10 +10,10 @@ function App() {
   const [output, setOutput] = useState("");
   const [selectedPrompt, setSelectedPrompt] = useState("");
   const prompts = [
-    "Fluffy cat in sun", 
-    "Dog chasing ball", 
-    "Cat napping on couch", 
-    "Curious dog explores outside", 
+    "Fluffy cat in sun",
+    "Dog chasing ball",
+    "Cat napping on couch",
+    "Curious dog explores outside",
     "Cat purring while petted",
     "A cat with red fur",
     "A dog",
@@ -58,11 +57,15 @@ function App() {
   useEffect(() => {
     handleSubmit(null, "");
   }, []);
-
+ 
+   
   return (
+ <>
+ <Navbar />
     <main>
+
       <div className="container">
-        <Navbar />
+  
         <div className="header">
           <div className="title">
             <h1>
@@ -127,6 +130,7 @@ function App() {
         <GalleryContainer />
       </div>
     </main>
+    </>
   );
 }
 
