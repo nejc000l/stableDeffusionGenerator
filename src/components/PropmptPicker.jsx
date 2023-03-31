@@ -14,7 +14,6 @@ const PromptPicker = ({ prompts, handlePromptClick }) => {
     handlePromptClick(prompt);
     setSelectedPrompt(prompt);
 
-    setSelectedPrompt(promptsCopy[index]);
 
     promptRefs.current.forEach(
       (ref) => (ref.current.style.backgroundColor = "")
