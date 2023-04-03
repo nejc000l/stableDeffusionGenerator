@@ -3,6 +3,7 @@ import "../src/styles/globals.css";
 import GalleryContainer from "./components/GalleryContainer";
 import Navbar from "./components/Navbar";
 import PromptPicker from "./components/PropmptPicker";
+import {CiSaveDown2} from 'react-icons/ci'
 const API_TOKEN = import.meta.env.VITE_API_TOKEN;
 
 function App() {
@@ -83,6 +84,10 @@ function App() {
               {!loading && output && (
                 <div className="result-image">
                   <img src={output} alt="" />
+                  <div className="save-icon">
+
+                  <CiSaveDown2 className="save-icon" width={100} height={400}/>
+                  </div>
                 </div>
               )}
             </div>
