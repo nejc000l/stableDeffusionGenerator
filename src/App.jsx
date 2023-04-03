@@ -10,6 +10,8 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [output, setOutput] = useState("");
   const [selectedPrompt, setSelectedPrompt] = useState("");
+  const [savedImage, setSavedImage] = useState("");
+
   const prompts = [
     "Fluffy cat in sun",
     "Dog chasing ball",
@@ -59,6 +61,11 @@ function App() {
     handleSubmit(null, "");
   }, []);
  
+  const handleSaveImage = () => {
+    setSavedImage(output);
+      console.log(savedImage);
+
+  };
    
   return (
  <>
@@ -86,7 +93,7 @@ function App() {
                   <img src={output} alt="" />
                   <div className="save-icon">
 
-                  <CiSaveDown2 className="save-icon" width={100} height={400}/>
+                  <CiSaveDown2 onClick={handleSaveImage} className="save-icon" width={100} height={400}/>
                   </div>
                 </div>
               )}
@@ -132,7 +139,7 @@ function App() {
         </div>
       </div>
       <div className="gallery">
-        <GalleryContainer />
+        <GalleryContainer savedImage={savedImage} />
       </div>
     </main>
     </>
