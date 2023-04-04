@@ -38,6 +38,7 @@ main {
   padding-left: 50px;
   height: auto;
   border-radius: 30px;
+  z-index:0;
 }
 .result-image {
   width: 100%;
@@ -62,7 +63,7 @@ main {
   flex-direction: column;
   width: 100%;
   height: auto;
-  padding-bottom:15%;
+  padding-bottom:5%;
 }
 .prompt {
   font-family: Arial, sans-serif;
@@ -87,7 +88,7 @@ main {
   background-color: #2d6bb1;
 }
 .title {
-  font-size: 2rem;
+  font-size: 4rem;
   padding-bottom: 2rem;
 }
 .title span {

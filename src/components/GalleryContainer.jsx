@@ -39,7 +39,7 @@ function GalleryContainer() {
             <div className="image-box">
               <img
                 className="image"
-                src="https://www.nj.com/resizer/dY2Wf8hZKncZsdiiOA7NdJhKI9E=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/FM3QYFTNP5AUFAEVCPLVB73MSY.jpg"
+                src="blob:http://127.0.0.1:5173/cd83cefd-3372-4392-879b-17503bcb25da"
                 alt="A beautiful sunset"
                 onClick={handleImageClick}
               />
@@ -47,7 +47,7 @@ function GalleryContainer() {
             <div className="image-box">
               <img
                 className="image"
-                src="https://news.artnet.com/app/news-upload/2022/12/prisma-labs-lensa-ai.jpg"
+                src="blob:http://127.0.0.1:5173/36173009-db66-4693-8b30-e8fc3fcd2181"
                 alt="A beautiful sunset"
                 onClick={handleImageClick}
               />
@@ -55,7 +55,7 @@ function GalleryContainer() {
             <div className="image-box">
               <img
                 className="image"
-                src="https://lh3.googleusercontent.com/hwau7OVWx96XaME5KpRuJ0I_MscrerK6SbRH1UwYHYaxIDQQtn7RZK02LDSfBzCreidFgDsJeXyqDct6EZiH6vsV=w640-h400-e365-rj-sc0x00ffffff"
+                src="blob:http://127.0.0.1:5173/4a9b80ee-9a79-4c72-8893-a679d8302fa1"
                 alt="A beautiful sunset"
                 onClick={handleImageClick}
               />
@@ -63,7 +63,7 @@ function GalleryContainer() {
             <div className="image-box">
               <img
                 className="image"
-                src="https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+                src="blob:http://127.0.0.1:5173/2ced0cc1-ed8e-4374-a2a9-5ef4edadb6fb"
                 alt="A beautiful sunset"
                 onClick={handleImageClick}
               />
