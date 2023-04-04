@@ -16,8 +16,9 @@ main {
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ),
-    url("https://www.freevector.com/uploads/vector/preview/31661/FreeVectorTechnology_Artificial_Intelligence_BackgroundWW0622_generated.jpg");
+    url("https://th.bing.com/th/id/OIG.5odJBlp20VJU7vBTvBOP?pid=ImgGn");
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .gallery {
@@ -26,9 +27,11 @@ main {
 }
 .image_container {
   width: 100%;
-  display: flex;
+  padding-top: 40px;
   align-items: center;
   justify-content: center;
+  /* background: black;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 38px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 58.09) 0px -3px 5px; */
 }
 .result-image img {
   width: 100%;
@@ -58,7 +61,8 @@ main {
   justify-items: center;
   flex-direction: column;
   width: 100%;
-  height: 60pc;
+  height: auto;
+  padding-bottom:15%;
 }
 .prompt {
   font-family: Arial, sans-serif;
@@ -157,16 +161,24 @@ p span {
   width: 100% /* set a fixed width / height: 500px; / set a fixed height */
   }
   
-  .save-icon {
+  .save-icon  {
   position: absolute;
   top: 10px;
-  right: 27%;
-  width: 20%;
+  right: 15%;
+  width: 24%;
   height: auto;
   color: rgb(245, 237, 237);
   z-index: 1;
   cursor: pointer;
-  }
+  background-color: #e1e1e173;
+  border-radius: 50px;
+
+}
+.save-icon:hover{
+  background-color: #e1e1e1ce;
+  transition: all 1s;
+}
+  
 /* Small devices (landscape phones, 576px and up) */
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
@@ -266,7 +278,7 @@ p span {
     font-size: 1.2rem;
   }
   .result-image img {
-    width: 40%;
+    width: 80%;
     height: auto;
     padding-left: 0;
     display: flex;
@@ -284,7 +296,7 @@ p span {
     word-wrap: break-word;
   }
   .description-md {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
   }
   .description-sm {
     padding: 4%;

@@ -93,7 +93,7 @@ function App() {
                   <img src={output} alt="" />
                   <div className="save-icon">
 
-                  <CiSaveDown2 onClick={handleSaveImage} className="save-icon" width={100} height={400}/>
+                  <CiSaveDown2  style={{padding: '10px', boxShadow: 'rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px'}} onClick={handleSaveImage} className="save-icon" size={4}/>
                   </div>
                 </div>
               )}
@@ -108,10 +108,10 @@ function App() {
                   billions of images and can produce results that are comparable
                   to the ones you’d get from DALL-E 2 and MidJourney.
                 </h4>
-                <h5 className="description-sm">
+               {/*  <h5 className="description-sm">
                   <span className="tag">Unstable Diffusion</span>is also used to
                   generate NSFW AI-generated content.
-                </h5>
+                </h5> */}
               </div>
               <span>
                 Give it a simple prompt this are just some of the example:
