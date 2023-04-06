@@ -1,16 +1,27 @@
 .galleryContainer_main{
-    color: white;
-    background-color: white;
-    width: 100%;
-    height: auto;
+  color: white;
+  background-color: white;
+  width: 100%;
+  height: auto;
+  background-color: #000000af;
+  background: linear-gradient(90deg, #aed4a7, #d4eece, #380f53d2),
+  url("https://th.bing.com/th/id/OIG.5odJBlp20VJU7vBTvBOP?pid=ImgGn");
+  ;
+  background-blend-mode: multiply;
+  background-size: cover;
+  -webkit-mask-image: linear-gradient(to top, black 80%, transparent 100%);
+  mask-image: linear-gradient(to top, black 80%, transparent 100%);
 }
+
 .box_container{
     display: flex;
     width: 100%;
     height: auto;
-}
+    padding-top: 5%;
+  }
 .left_container{
-    background-color: #000000f2;
+ 
+    color: rgb(255, 255, 255);
     width: 100%;
     height: auto;
 }
@@ -57,8 +68,9 @@
 }
 .right_container{
     width: 50%;
-    background-color: #000000f2;
-    height: 100pc;
+/*     background-color: #000000f2;
+ */    height: 100pc;
+    
 
 }
 .checkmark {
@@ -87,7 +99,8 @@
   height: 100%;
   width: 100%;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding-top: 3%;  
+  flex-direction: column;
 
 }
 .image-boxes{
@@ -104,27 +117,34 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  overflow-y: scroll;
-    height: 1000px;
-    padding-top: 20px;
+  overflow-x: scroll;
+    flex-direction: column;
+    background: #ffffff26;
+    padding: 20px;
+    border-radius: 66px;
   }
   .image-main-box::-webkit-scrollbar {
     display: none;
 }
-  
+.image-box::-webkit-scrollbar {
+  display: none;
+}
 .image-box {
-  height:100%;
   gap: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  width: 400px;
 
 }
 .image-box img{
   display: flex;
-  flex-direction: column;
-  width: 245px;
-  height: 245px;
+  flex-direction: row;
+  width: 100px;
+  height: 100px;
   cursor: pointer;
+  border-radius: 100px;
+
+
 }
   
   .image {
@@ -142,8 +162,9 @@
   align-items: center;
   }
   .image-display{
-    width: 600px;
-    height: 600px;
+    width: 400px;
+    height: 400px;
+    padding: 20px;
     display: flex;
     justify-content: center;
   }

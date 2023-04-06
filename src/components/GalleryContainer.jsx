@@ -11,10 +11,16 @@ function GalleryContainer({ savedImages }) {
     }
   }
   console.log(savedImages);
+
+  
   return (
     <div className="galleryContainer_main">
       <div className="box_container">
-        <div className="left_container">
+        <div
+          className={`left_container ${
+            savedImages.length === 0 ? "full-width" : ""
+          }`}
+        >
           <div className="description_main_left">
             <div className="col">
               <div className="text">
@@ -34,22 +40,24 @@ function GalleryContainer({ savedImages }) {
             </div>
           </div>
         </div>
-        <div className="right_container">
-          <div className="image-main-box">
-            <div className="image-box">
-              {savedImages.map((savedImage) => (
-                <img
-                  key={savedImage}
-                  src={savedImage}
-                  onClick={handleImageClick}
-                />
-              ))}
+        {savedImages.length > 0 && (
+          <div className="right_container">
+            <div className="image-main-box">
+              <div className="image-box">
+                {savedImages.map((savedImage) => (
+                  <img
+                    key={savedImage}
+                    src={savedImage}
+                    onClick={handleImageClick}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="displayed-image">
+              <div className="image-display" ref={imageDisplayRef}></div>
             </div>
           </div>
-          <div className="displayed-image">
-            <div className="image-display" ref={imageDisplayRef}></div>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );
