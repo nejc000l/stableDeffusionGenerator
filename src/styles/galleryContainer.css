@@ -102,6 +102,7 @@ padding-top: 2%;
   padding-top: 3%;  
   flex-direction: column;
 
+  
 }
 .image-boxes{
   background-color: #000000;
@@ -119,10 +120,11 @@ padding-top: 2%;
   align-items: center;
   overflow-x: scroll;
     flex-direction: column;
-    background: #ffffff26;
+    background: #ffffff0d;
     padding: 20px;
     border-radius: 66px;
     scroll-behavior: smooth;
+    touch-action: none;
 
   }
   .image-main-box::-webkit-scrollbar {
@@ -141,10 +143,12 @@ padding-top: 2%;
 .image-box img{
   display: flex;
   flex-direction: row;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   cursor: pointer;
-  border-radius: 100px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.373);
+
 
 
 }

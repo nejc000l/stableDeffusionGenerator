@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import "../styles/galleryContainer.css";
+import Hammer from 'hammerjs'
 function GalleryContainer({ savedImages }) {
   const [imageContents, setImageContents] = useState("");
   const imageDisplayRef = useRef(null);
@@ -11,12 +12,15 @@ function GalleryContainer({ savedImages }) {
     }
   }
   var element = document.querySelector(".image-main-box");
-if (element !== null) {
-  element.addEventListener("wheel", function (event) {
-    event.preventDefault();
-    element.scrollLeft += event.deltaY;
-  });
-}
+  if (element !== null) {
+    var hammer = new Hammer(element);
+    hammer.get("pan").set({ direction: Hammer.DIRECTION_ALL });
+    
+    hammer.on("pan", function (event) {
+      element.scrollLeft -= event.deltaX;
+      element.scrollTop -= event.deltaY;
+    });
+  }
   return (
     <div className="galleryContainer_main">
       <div className="box_container">
