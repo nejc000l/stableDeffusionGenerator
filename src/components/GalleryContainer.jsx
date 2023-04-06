@@ -11,12 +11,12 @@ function GalleryContainer({ savedImages }) {
     }
   }
   var element = document.querySelector(".image-main-box");
+if (element !== null) {
   element.addEventListener("wheel", function (event) {
     event.preventDefault();
-    element.scrollLeft = element.scrollLeft + event.deltaY;
-
+    element.scrollLeft += event.deltaY;
   });
-  
+}
   return (
     <div className="galleryContainer_main">
       <div className="box_container">
