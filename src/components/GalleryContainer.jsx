@@ -10,8 +10,12 @@ function GalleryContainer({ savedImages }) {
       imageDisplayRef.current.innerHTML = event.target.outerHTML;
     }
   }
-  console.log(savedImages);
+  var element = document.querySelector(".image-main-box");
+  element.addEventListener("wheel", function (event) {
+    event.preventDefault();
+    element.scrollLeft = element.scrollLeft + event.deltaY;
 
+  });
   
   return (
     <div className="galleryContainer_main">

@@ -9,15 +9,15 @@
   ;
   background-blend-mode: multiply;
   background-size: cover;
-  -webkit-mask-image: linear-gradient(to top, black 80%, transparent 100%);
-  mask-image: linear-gradient(to top, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 90%, transparent 100%);
+  mask-image: linear-gradient(to top, black 90%, transparent 100%);
 }
 
 .box_container{
     display: flex;
     width: 100%;
     height: auto;
-    padding-top: 5%;
+padding-top: 2%;
   }
 .left_container{
  
@@ -122,6 +122,8 @@
     background: #ffffff26;
     padding: 20px;
     border-radius: 66px;
+    scroll-behavior: smooth;
+
   }
   .image-main-box::-webkit-scrollbar {
     display: none;
