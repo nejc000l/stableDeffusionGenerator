@@ -21,6 +21,14 @@ function GalleryContainer({ savedImages }) {
       element.scrollTop -= event.deltaY;
     });
   }
+  var element = document.querySelector(".image-main-box");
+  if (element !== null) {
+    element.addEventListener("wheel", function (event) {
+      event.preventDefault();
+      element.scrollLeft += event.deltaY;
+    });
+  }
+  
   return (
     <div className="galleryContainer_main">
       <div className="box_container">

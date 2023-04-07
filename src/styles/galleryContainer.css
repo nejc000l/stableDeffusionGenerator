@@ -4,13 +4,13 @@
   width: 100%;
   height: auto;
   background-color: #000000af;
-  background: linear-gradient(90deg, #aed4a7, #d4eece, #380f53d2),
+ /*  background: linear-gradient(90deg, #aed4a7, #d4eece, #380f53d2),
   url("https://th.bing.com/th/id/OIG.5odJBlp20VJU7vBTvBOP?pid=ImgGn");
   ;
   background-blend-mode: multiply;
   background-size: cover;
   -webkit-mask-image: linear-gradient(to top, black 90%, transparent 100%);
-  mask-image: linear-gradient(to top, black 90%, transparent 100%);
+  mask-image: linear-gradient(to top, black 90%, transparent 100%); */
 }
 
 .box_container{
