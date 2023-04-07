@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar";
 import PromptPicker from "./components/PropmptPicker";
 import { CiSaveDown2 } from "react-icons/ci";
 import Footer from "./components/Footer";
+import Logo  from '../public/1x/Artboard-19.png';
+
 const API_TOKEN = import.meta.env.VITE_API_TOKEN;
 
 function App() {
@@ -88,8 +90,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <main>
-        <div className="container">
+      <main style={{ backgroundImage:`url(${Logo})` ,backgroundRepeat: 'no-repeat',
+        boxShadow: '0px 10px 10px rgba(0, 0, 0, 0.5)' }}>
+        <div  className="container">
           <div className="header">
             <div className="title">
               <h1>
@@ -123,8 +126,7 @@ function App() {
                 )}
               </div>
               {/* right side */}
-              <div className="generator">
-                <div className="description">
+              <div className="description">
                   <h4 className="description-md">
                     An open-source machine learning model that can generate
                     images from text, modify images based on text, or fill in
@@ -137,11 +139,15 @@ function App() {
                   <span className="tag">Unstable Diffusion</span>is also used to
                   generate NSFW AI-generated content.
                 </h5> */}
-                </div>
-                <span>
+        
+             
+              </div>
+              <div className="generator">
+              <span>
                   Give it a simple prompt this are just some of the example:
                 </span>
-                <PromptPicker
+           
+              <PromptPicker
                   handlePromptClick={handlePromptClick}
                   prompts={prompts}
                 />

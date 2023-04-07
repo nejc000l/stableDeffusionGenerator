@@ -20,7 +20,7 @@ const PromptPicker = ({ prompts, handlePromptClick }) => {
     );
 
     const selectedPromptRef = promptRefs.current[index].current;
-    selectedPromptRef.style.backgroundColor = "#0e0f7c";
+    selectedPromptRef.style.backgroundColor = "";
     selectedPromptRef.style.color = "gray";
     selectedPromptRef.addEventListener("click", () => {
       selectedPromptRef.style.backgroundColor = "";

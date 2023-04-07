@@ -26,7 +26,6 @@
   
   .nav-link a.active {
     color: #fff;
-    text-decoration: underline;
     transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for color */
 
 
@@ -48,7 +47,7 @@ button{
 }
 
 button:hover {
-    background-color: #0c0d6b;
+    background-color: #350c6b;
     color: white;
 }
 
