@@ -4,6 +4,7 @@ import GalleryContainer from "./components/GalleryContainer";
 import Navbar from "./components/Navbar";
 import PromptPicker from "./components/PropmptPicker";
 import { CiSaveDown2 } from "react-icons/ci";
+import Footer from "./components/Footer";
 const API_TOKEN = import.meta.env.VITE_API_TOKEN;
 
 function App() {
@@ -168,6 +169,7 @@ function App() {
           <GalleryContainer savedImages={savedImages} />
         </div>
       </main>
+        <Footer/>
     </>
   );
 }

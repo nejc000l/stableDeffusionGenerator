@@ -104,6 +104,11 @@ main {
   font-family: Arial, Helvetica, sans-serif;
   padding-top: 2rem;
 }
+.gen-form{
+  display: flex;
+  flex-direction: column;
+
+}
 input {
   outline: none;
   all: unset;
