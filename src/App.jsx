@@ -164,7 +164,7 @@ function App() {
                     Generate
                   </button>
                 </form>
-                <div>
+                   <div>
                   {loading && <div className="loading">Loading...</div>}
                 </div>
               </div>

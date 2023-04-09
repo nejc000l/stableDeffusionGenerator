@@ -234,6 +234,22 @@ p span {
     display: flex;
     justify-items: center;
   }
+}@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.loading {
+  height: 20px;
+  background-color: #4CAF50;
+  padding: 10px;
+  animation-name: loading;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }
 
 /* Small devices (landscape phones, 576px and up) */
