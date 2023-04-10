@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import PromptPicker from "./components/PropmptPicker";
 import { CiSaveDown2 } from "react-icons/ci";
 import Footer from "./components/Footer";
-import Logo  from '../public/1x/Artboard-19.png';
+import Logo from "../public/1x/Artboard-19.png";
 
 const API_TOKEN = import.meta.env.VITE_API_TOKEN;
 
@@ -86,13 +86,13 @@ function App() {
     });
   };
 
-  
   return (
     <>
       <Navbar />
-      <main style={{ backgroundImage:`url(${Logo})` ,backgroundRepeat: 'no-repeat',
-        boxShadow: '0px 10px 10px rgba(0, 0, 0, 0.5)' }}>
-        <div  className="container">
+      <main
+  
+      >
+        <div className="container">
           <div className="header">
             <div className="title">
               <h1>
@@ -106,49 +106,57 @@ function App() {
 
             <section className="container_main">
               {/* left side */}
-            
+
               {/* right side */}
               <div className="description">
-                  <h4 className="description-md">
-                    An open-source machine learning model that can generate
-                    images from text, modify images based on text, or fill in
-                    details on low-resolution or low-detail images. It has been
-                    trained on billions of images and can produce results that
-                    are comparable to the ones you’d get from DALL-E 2 and
-                    MidJourney.
-                  </h4>
-                  {/*  <h5 className="description-sm">
+                <h4 className="description-md">
+                  An open-source machine learning model that can generate images
+                  from text, modify images based on text, or fill in details on
+                  low-resolution or low-detail images. It has been trained on
+                  billions of images and can produce results that are comparable
+                  to the ones you’d get from DALL-E 2 and MidJourney.
+                </h4>
+                {/*  <h5 className="description-sm">
                   <span className="tag">Unstable Diffusion</span>is also used to
                   generate NSFW AI-generated content.
                 </h5> */}
-        
-               
               </div>
               <div className="image_container">
                 {!loading && output && (
                   <div className="result-image">
-                    <img src={output} alt="" />
-                    <div className="save-icon">
-                      <CiSaveDown2
+                    <div
+                      className="image-wrapper"
+                      style={{ position: "relative" }}
+                    >
+                      <img src={output} alt="" />
+                      <div
+                        className="save-icon"
                         style={{
-                          padding: "10px",
+                          position: "absolute",
+                          top: 0,
+                          right: 0,
                           boxShadow:
                             "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px",
                         }}
-                        onClick={() => handleSaveImage(output)}
-                        className="save-icon"
-                        size={4}
-                      />
+                      >
+                        <CiSaveDown2
+                          style={{padding:'5px'}}
+                          onClick={() => handleSaveImage(output)}
+                          className="save-icon"
+                          size={4}
+                        />
+                      </div>
                     </div>
                   </div>
                 )}
               </div>
               <div className="generator">
-              <span>
-                  Give it a simple prompt this are just some of the example:
+                <span>
+                  Give it a simple prompt this are just some of the example: <br />
                 </span>
-           
-              <PromptPicker
+                <span className="small-span">You can also save the image to gallery below. <br /> Just hover over it and click the save icon.</span>
+
+                <PromptPicker
                   handlePromptClick={handlePromptClick}
                   prompts={prompts}
                 />
@@ -165,7 +173,7 @@ function App() {
                     Generate
                   </button>
                 </form>
-                   <div>
+                <div>
                   {loading && <div className="loading">Loading...</div>}
                 </div>
               </div>
@@ -176,7 +184,7 @@ function App() {
           <GalleryContainer savedImages={savedImages} />
         </div>
       </main>
-        <Footer/>
+      <Footer />
     </>
   );
 }
