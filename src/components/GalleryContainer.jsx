@@ -28,6 +28,7 @@ function GalleryContainer({ savedImages }) {
       element.scrollLeft += event.deltaY;
     });
   }
+
   
   return (
     <div className="galleryContainer_main">
@@ -59,7 +60,7 @@ function GalleryContainer({ savedImages }) {
         {savedImages.length > 0 && (
           <div className="right_container">
             <div className="image-main-box">
-              <div className="image-box">
+                <div className="image-box">
                 {savedImages.map((savedImage) => (
                   <img
                     key={savedImage}
