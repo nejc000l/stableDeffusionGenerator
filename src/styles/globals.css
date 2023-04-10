@@ -286,9 +286,10 @@ p span {
 
 .loading {
   height: 20px;
-  background-color: #4CAF50;
+  background: #770931ee;  
   padding: 10px;
   animation-name: loading;
+  border-radius: 20px;
   animation-duration: 4s;
   animation-iteration-count: infinite;
 }
