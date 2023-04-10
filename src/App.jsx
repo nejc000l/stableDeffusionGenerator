@@ -106,6 +106,24 @@ function App() {
 
             <section className="container_main">
               {/* left side */}
+            
+              {/* right side */}
+              <div className="description">
+                  <h4 className="description-md">
+                    An open-source machine learning model that can generate
+                    images from text, modify images based on text, or fill in
+                    details on low-resolution or low-detail images. It has been
+                    trained on billions of images and can produce results that
+                    are comparable to the ones you’d get from DALL-E 2 and
+                    MidJourney.
+                  </h4>
+                  {/*  <h5 className="description-sm">
+                  <span className="tag">Unstable Diffusion</span>is also used to
+                  generate NSFW AI-generated content.
+                </h5> */}
+        
+               
+              </div>
               <div className="image_container">
                 {!loading && output && (
                   <div className="result-image">
@@ -124,23 +142,6 @@ function App() {
                     </div>
                   </div>
                 )}
-              </div>
-              {/* right side */}
-              <div className="description">
-                  <h4 className="description-md">
-                    An open-source machine learning model that can generate
-                    images from text, modify images based on text, or fill in
-                    details on low-resolution or low-detail images. It has been
-                    trained on billions of images and can produce results that
-                    are comparable to the ones you’d get from DALL-E 2 and
-                    MidJourney.
-                  </h4>
-                  {/*  <h5 className="description-sm">
-                  <span className="tag">Unstable Diffusion</span>is also used to
-                  generate NSFW AI-generated content.
-                </h5> */}
-        
-             
               </div>
               <div className="generator">
               <span>
